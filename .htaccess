@@ -1,0 +1,20 @@
+# Vanegas Marketing — Apache (Plesk)
+
+# Evitar listado de directorios
+Options -Indexes
+
+# Bloquear acceso directo a carpetas internas
+RewriteEngine On
+RewriteRule ^(data|inc|partials)/ - [F,L]
+
+# Bloquear la base de datos SQLite explícitamente
+<FilesMatch "\.(db|sqlite|sqlite3)$">
+    Require all denied
+</FilesMatch>
+
+# Cabeceras de seguridad básicas
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

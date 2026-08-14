@@ -1,0 +1,31 @@
+# Claude
+CLAUDE.md
+.claude/
+
+# Secrets & Environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+id_rsa
+id_rsa.pub
+
+# Base de datos (SQLite) — datos del cliente
+/data/*.db
+/data/*.sqlite
+/data/*.sqlite-journal
+/data/*.sqlite-wal
+/data/*.sqlite-shm
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
